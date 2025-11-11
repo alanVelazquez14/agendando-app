@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Dist folders
+server/dist/
+client/dist/  # si vas a generar build también en frontend
+
+# Logs
+*.log
+
+# Env files
+.env
