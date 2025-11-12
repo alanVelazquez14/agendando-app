@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import turnosRoutes from "./routes/turnos.routes";
+import turnosRoutes from "./routes/turnos.routes.js";
 
 dotenv.config();
 
