@@ -5,12 +5,18 @@
   --foreground: #171717;
   --font-geist-sans: system-ui, Arial, Helvetica, sans-serif;
   --font-geist-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Modo Claro */
+  --accent: #651B1B;
+  --success: #1B652B; /* SIN GUIONES */
 }
 
 .dark {
   --background: #0a0a0a;
   --foreground: #dfdddd;
-  --textDark: #651B1B;
+  /* Modo Oscuro */
+  --accent: #9A2C2C;
+  --success: #2F9C40; /* SIN GUIONES */
 }
 
 body {

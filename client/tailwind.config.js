@@ -8,9 +8,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        primary: 'var(--textDark)',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        accent: "var(--accent)",
+        success: "var(--success)",
+      },
+
+      animation: {
+        float: "float 10s ease-in-out infinite",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
       },
     },
   },

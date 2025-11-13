@@ -33,7 +33,7 @@ export default function RootLayout({
         attribute="class"
         defaultTheme="light"
         enableSystem={true}
-        disableTransitionOnChange
+        disableTransitionOnChange={true}
       >
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
