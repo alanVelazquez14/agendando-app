@@ -7,9 +7,9 @@ import { Sun, Moon } from "lucide-react";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
-  { name: "Como funciona", href: "/como-funciona" },
-  { name: "Precios", href: "/precios" },
-  { name: "Contacto", href: "/contacto" },
+  { name: "Beneficios", href: "#beneficios" },
+  { name: "Como funciona", href: "#como-funciona" },
+  { name: "Contacto", href: "#contacto" },
 ];
 
 export default function ThemeToggle() {
