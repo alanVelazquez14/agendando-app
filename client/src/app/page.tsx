@@ -1,11 +1,13 @@
 import { Particles } from "@/utils/Particles";
 import { ArrowRight } from "lucide-react";
 import BeneficioPage from "./beneficio/page";
+import ComoFuncionaPage from "./como-funciona/page";
+import ClientesPage from "./clientes/page";
 
 export default function Home() {
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between p-8 md:p-24 bg-background transition-colors duration-300">
+      <main className="flex flex-col items-center justify-between p-8 md:p-24 bg-background transition-colors duration-300">
         <div className="absolute inset-0 -z-10">
           <Particles />
         </div>
@@ -40,6 +42,12 @@ export default function Home() {
       </main>
       <section id="beneficios">
         <BeneficioPage />
+      </section>
+      <section id="como-funciona">
+        <ComoFuncionaPage />
+      </section>
+      <section>
+        <ClientesPage />
       </section>
     </>
   );
