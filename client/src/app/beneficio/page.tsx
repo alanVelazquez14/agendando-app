@@ -23,7 +23,7 @@ const IconWrapper: React.FC<IconWrapperProps> = ({ iconName }) => {
 
   if (!IconComponent) {
     return (
-      <div className="w-10 h-10 bg-red-100 rounded-md flex items-center justify-center mb-4 text-red-600">
+      <div className="w-10 h-10 bg-red-50 dark:bg-red-800 rounded-md flex items-center justify-center mb-4 text-red-600 dark:text-red-300">
         !
       </div>
     );
@@ -64,9 +64,9 @@ const featuresData: Feature[] = [
 
 export default function BeneficioPage() {
   return (
-    <div className="flex flex-col items-center justify-between p-8 md:p-24 bg-background transition-colors duration-300 bg-gray-50">
+    <div className="flex flex-col items-center justify-between p-8 md:p-24 bg-gray-50 transition-colors duration-300">
       <div className="space-y-10 max-w-7xl mt-10">
-        <h1 className="text-5xl font-bold text-center">Beneficios Principales</h1>
+        <h1 className="text-5xl font-bold text-center text-foreground">Beneficios Principales</h1>
         <p className="text-lg text-center text-gray-600 max-w-3xl mx-auto">
           Todo lo que necesitás para gestionar tus turnos de manera eficiente y
           profesional.
@@ -75,12 +75,12 @@ export default function BeneficioPage() {
           {featuresData.map((feature, index) => (
             <div
               key={index}
-              className="p-8 bg-white border border-gray-200 rounded-lg shadow-sm 
+              className="p-8 bg-background border border-gray-200 rounded-lg shadow-sm 
             hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:border-[#651B1B]"
             >
               <IconWrapper iconName={feature.icon} />
 
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
+              <h3 className="text-xl font-bold text-foreground mb-2">
                 {feature.title}
               </h3>
 
