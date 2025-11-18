@@ -60,7 +60,7 @@ export const Navbar = () => {
           >
             Registrarse
           </a>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
       </div>
     </nav>

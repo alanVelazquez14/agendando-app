@@ -10,9 +10,9 @@ export default function CallToActionPage() {
           Únete a miles de profesionales que ya están mejorando su gestión de
           turnos con AgendandoAPP.
         </p>
-        <button className="bg-white text-[#651B1B] px-6 py-3 rounded-xl font-bold shadow-md hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-0.5 focus:ring-4 focus:ring-[#651B1B]/50">
+        <a href="/register" className="bg-white text-[#651B1B] px-6 py-3 rounded-xl font-bold shadow-md hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-0.5 focus:ring-4 focus:ring-[#651B1B]/50">
           Probar gratis ahora <ArrowRight className="inline-block ml-2" />
-        </button>
+        </a>
         <div className="text-sm text-gray-300 mt-10">
           ✓ Sin tarjeta de crédito • ✓ 14 días gratis • ✓ Cancela cuando quieras
         </div>

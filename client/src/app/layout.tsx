@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/navbar/Navbar";
 import { ThemeProvider } from "next-themes";
 import BeneficioPage from "./beneficio/page";
+import Footer from "@/components/footer/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,19 +31,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <ThemeProvider
+      {/* <ThemeProvider
         attribute="class"
         defaultTheme="light"
         enableSystem={true}
         disableTransitionOnChange={true}
+      > */}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <Navbar />
-          {children}
-        </body>
-      </ThemeProvider>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
+      {/* </ThemeProvider> */}
     </html>
   );
 }
