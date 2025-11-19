@@ -37,8 +37,6 @@ export const login = async (req: Request, res: Response) => {
 
     if (!email || !password)
       return res.status(400).json({ message: "Faltan datos" });
-
-    // 1. Buscar usuario
     const result = await pool.query("SELECT * FROM users WHERE email = $1", [
       email,
     ]);
@@ -47,14 +45,10 @@ export const login = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "Credenciales inválidas" });
 
     const user = result.rows[0];
-
-    // 2. Comparar contraseña
     const match = await bcrypt.compare(password, user.password);
 
     if (!match)
       return res.status(400).json({ message: "Credenciales inválidas" });
-
-    // 3. Generar token
     const token = jwt.sign(
       { userId: user.id },
       process.env.JWT_SECRET as string,
