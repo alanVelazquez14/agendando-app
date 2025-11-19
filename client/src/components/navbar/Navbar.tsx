@@ -3,7 +3,8 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, MoveLeft } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Inicio", href: "/" },
@@ -30,38 +31,52 @@ export default function ThemeToggle() {
 }
 
 export const Navbar = () => {
+  const pathname = usePathname();
+
+  const isAuthPage = pathname === "/login" || pathname === "/register";
   return (
     <nav className="bg-white text-foreground shadow-md transition-colors duration-300 sticky top-0 z-100 border-b border-gray-200 p-2">
       <div className="flex items-center justify-around mx-auto px-4 py-3">
         <Logo />
 
-        <div className="hidden md:flex space-x-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="hover:underline hover:underline-offset-4 hover:text-[#651B1B] text-lg text-foreground hover:text-primary transition duration-200"
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
+        {!isAuthPage && (
+          <div className="hidden md:flex space-x-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="hover:underline hover:underline-offset-4 hover:text-[#651B1B] text-lg transition duration-200"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        )}
 
-        <div className="flex items-center space-x-4">
+        {isAuthPage ? (
           <a
-            href="/login"
-            className="hover:bg-green-700 hover:text-white py-2 px-5 rounded"
+            href="/"
+            className="text-[#651B1B] hover:underline text-lg"
           >
-            Iniciar Sesión
+           <MoveLeft className="inline-block mr-2" /> Volver al inicio
           </a>
-          <a
-            href="/register"
-            className="py-2 px-5 bg-[#651B1B] text-white rounded hover:bg-[#651B1B]/90 transition duration-200"
-          >
-            Registrarse
-          </a>
-          {/* <ThemeToggle /> */}
-        </div>
+        ) : (
+          <div className="flex items-center space-x-4">
+            <a
+              href="/login"
+              className="hover:bg-green-700 hover:text-white py-2 px-5 rounded"
+            >
+              Iniciar Sesión
+            </a>
+            <a
+              href="/register"
+              className="py-2 px-5 bg-[#651B1B] text-white rounded hover:bg-[#651B1B]/90 transition duration-200"
+            >
+              Registrarse
+            </a>
+            {/* <ThemeToggle /> */}
+          </div>
+        )}
       </div>
     </nav>
   );
