@@ -27,7 +27,7 @@ const clientes = [
 export default function ClientesPage() {
   return (
     <div className="flex flex-col items-center justify-between p-8 md:p-24 bg-background transition-colors duration-300 bg-gray-50">
-      <h1 className="text-5xl font-bold mb-6">Clientes Satisfechos</h1>
+      <h1 className="text-5xl font-bold mb-6 text-center">Clientes Satisfechos</h1>
       <p className="text-lg max-w-3xl text-center text-gray-600">
         Profesionales que confían en{" "}
         <span className="font-semibold text-[#651B1B]/80">AgendandoAPP</span>{" "}

@@ -31,7 +31,7 @@ export default function ThemeToggle() {
 
 export const Navbar = () => {
   return (
-    <nav className="bg-background text-foreground shadow-md transition-colors duration-300 sticky top-0 z-10 border-b border-gray-200 p-2">
+    <nav className="bg-white text-foreground shadow-md transition-colors duration-300 sticky top-0 z-100 border-b border-gray-200 p-2">
       <div className="flex items-center justify-around mx-auto px-4 py-3">
         <Logo />
 
