@@ -17,8 +17,8 @@ const inputs = [
 
 export default function LoginPage() {
   return (
-    <div className="flex flex-col items-center justify-center p-24 bg-gray-50 w-full transition-colors duration-300">
-      <div className="border border-gray-200 rounded-xl shadow-md p-8 w-xl bg-white">
+    <div className="flex flex-col items-center justify-center p-24 bg-gray-200 w-full transition-colors duration-300">
+      <div className="border border-gray-300 rounded-xl shadow-md p-8 w-xl bg-white">
         <h1 className="text-4xl font-bold text-center mt-4">Iniciar sesión</h1>
         <p className="text-sm mt-2 text-gray-600 text-center">
           Accede a tu cuenta para gestionar tus turnos.

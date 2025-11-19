@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Beneficios", href: "#beneficios" },
   { name: "Como funciona", href: "#como-funciona" },
-  { name: "Contacto", href: "#contacto" },
+  { name: "Contacto", href: "/contacto" },
 ];
 
 export default function ThemeToggle() {
@@ -33,7 +33,7 @@ export default function ThemeToggle() {
 export const Navbar = () => {
   const pathname = usePathname();
 
-  const isAuthPage = pathname === "/login" || pathname === "/register";
+  const isAuthPage = pathname === "/login" || pathname === "/register" || pathname === "/contacto";
   return (
     <nav className="bg-white text-foreground shadow-md transition-colors duration-300 sticky top-0 z-100 border-b border-gray-200 p-2">
       <div className="flex items-center justify-around mx-auto px-4 py-3">

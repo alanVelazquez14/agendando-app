@@ -64,7 +64,7 @@ const featuresData: Feature[] = [
 
 export default function BeneficioPage() {
   return (
-    <div className="flex flex-col items-center justify-between p-8 md:p-24 bg-gray-50 transition-colors duration-300">
+    <div className="flex flex-col items-center justify-between p-8 md:p-24 bg-gray-200 transition-colors duration-300">
       <div className="space-y-10 max-w-7xl mt-10">
         <h1 className="text-5xl font-bold text-center text-foreground">Beneficios Principales</h1>
         <p className="text-lg text-center text-gray-600 max-w-3xl mx-auto">
