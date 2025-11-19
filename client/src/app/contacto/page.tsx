@@ -31,7 +31,7 @@ export default function ContactoPage() {
       <div className="border border-gray-300 rounded-xl shadow-md p-8 w-xl bg-white">
         <h1 className="text-4xl font-bold text-center mt-4">Contactanos</h1>
         <p className="text-sm mt-2 text-gray-600 text-center">
-          Estamos aquí para ayudarte. Envianos un mensaje y te responderemos a
+          Estamos aquí para ayudarte. Envianos un mensaje con tu consulta y te responderemos a
           la brevedad.
         </p>
         <form className="mt-10 space-y-4">
