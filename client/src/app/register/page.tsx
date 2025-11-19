@@ -1,4 +1,6 @@
 "use client";
+import { PasswordBar } from "@/components/PasswordBar";
+import { PasswordInput } from "@/components/PasswordInput";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -108,17 +110,44 @@ export default function RegisterPage() {
         <form className="space-y-4 mt-10" onSubmit={handleSubmit}>
           {input.map((field) => (
             <div key={field.name}>
-              <label className="text-sm block text-gray-700 font-semibold mt-3">
-                {field.label}
-              </label>
-              <input
-                type={field.type}
-                name={field.name}
-                placeholder={field.placeholder}
-                value={formData[field.name as keyof FormData]}
-                onChange={handleChange}
-                className="w-full mt-2 mb-1 p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#651B1B]"
-              />
+              {field.type === "password" ? (
+                <>
+                  <PasswordInput
+                    label={field.label}
+                    name={field.name}
+                    value={formData[field.name as keyof FormData]}
+                    onChange={handleChange}
+                    placeholder={field.placeholder}
+                  />
+
+                  {field.name === "password" &&
+                    formData.password.length > 0 && (
+                      <PasswordBar password={formData.password} />
+                    )}
+
+                  {field.name === "confirmPassword" &&
+                    formData.confirmPassword.length > 0 &&
+                    formData.password !== formData.confirmPassword && (
+                      <p className="text-sm text-red-600 mt-1">
+                        Las contraseñas no coinciden
+                      </p>
+                    )}
+                </>
+              ) : (
+                <>
+                  <label className="text-sm block text-gray-700 font-semibold mt-3">
+                    {field.label}
+                  </label>
+                  <input
+                    type={field.type}
+                    name={field.name}
+                    placeholder={field.placeholder}
+                    value={formData[field.name as keyof FormData]}
+                    onChange={handleChange}
+                    className="w-full mt-2 mb-1 p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#651B1B]"
+                  />
+                </>
+              )}
             </div>
           ))}
 

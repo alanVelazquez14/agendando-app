@@ -1,5 +1,6 @@
 "use client";
 
+import { PasswordInput } from "@/components/PasswordInput";
 import { useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
@@ -58,7 +59,7 @@ export default function LoginPage() {
       setTimeout(() => {
         router.push("/dashboard");
         toast.success("Inicio de sesión exitoso");
-      }, 1000);
+      }, 2000);
     } catch (error) {
       toast.error("Error al iniciar sesión");
       console.log(error);
@@ -89,13 +90,21 @@ export default function LoginPage() {
                 )}
               </div>
 
-              <input
-                type={input.type}
-                name={input.name}
-                placeholder={input.placeholder}
-                className="w-full mt-2 mb-1 p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#651B1B]"
-                onChange={handleChange}
-              />
+              {input.type === "password" ? (
+                <PasswordInput
+                  name={input.name}
+                  placeholder={input.placeholder}
+                  onChange={handleChange}
+                />
+              ) : (
+                <input
+                  type={input.type}
+                  name={input.name}
+                  placeholder={input.placeholder}
+                  className="w-full mt-2 mb-1 p-3 bg-gray-50 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#651B1B]"
+                  onChange={handleChange}
+                />
+              )}
             </div>
           ))}
 
