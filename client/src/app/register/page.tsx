@@ -171,7 +171,7 @@ export default function RegisterPage() {
           </a>
         </p>
 
-        <p className="text-center text-sm text-gray-600 border-t border-gray-200 pt-4">
+        <p className="text-center text-sm text-gray-600 border-t border-gray-300 pt-4">
           Al registrarte aceptás nuestros{" "}
           <a href="#" className="text-[#651B1B]">
             Términos de servicio

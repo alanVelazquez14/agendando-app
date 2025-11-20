@@ -32,7 +32,7 @@ export default function Home() {
 
           {/* Botones responsivos */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 justify-center mt-8 w-full px-4">
-            <button className="bg-[#651B1B] dark:bg-[#9A2C2C] text-white px-4 py-2.5 sm:px-6 sm:py-3 rounded-xl font-semibold sm:font-bold shadow-md hover:bg-[#651B1B]/90 dark:hover:bg-[#9A2C2C]/90 transition-all duration-300 transform hover:-translate-y-0.5 focus:ring-4 focus:ring-[#651B1B]/50 dark:focus:ring-[#9A2C2C]/50 w-full sm:w-auto text-sm sm:text-base">
+            <button className="bg-[#651B1B] dark:bg-[#9A2C2C] text-white px-4 py-2.5 sm:px-6 sm:py-3 cursor-pointer rounded-xl font-semibold sm:font-bold shadow-md hover:bg-[#651B1B]/90 dark:hover:bg-[#9A2C2C]/90 transition-all duration-300 transform hover:-translate-y-0.5 focus:ring-4 focus:ring-[#651B1B]/50 dark:focus:ring-[#9A2C2C]/50 w-full sm:w-auto text-sm sm:text-base">
               Comenzar gratis
               <ArrowRight className="inline-block ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
             </button>
