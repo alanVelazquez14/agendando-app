@@ -4,6 +4,7 @@ import { PasswordInput } from "@/components/PasswordInput";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
+import { BusinessTypeSelect } from "@/components/BussinessTypeSelect";
 
 const input = [
   {
@@ -37,6 +38,7 @@ type FormData = {
   email: string;
   password: string;
   confirmPassword: string;
+  businesstype: string;
 };
 
 export default function RegisterPage() {
@@ -45,18 +47,25 @@ export default function RegisterPage() {
     email: "",
     password: "",
     confirmPassword: "",
+    businesstype: "",
   });
 
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
 
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
+  };
+
+  const handleBusinessChange = (value: string) => {
+    setFormData((prev) => ({ ...prev, businesstype: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -69,6 +78,8 @@ export default function RegisterPage() {
 
     setLoading(true);
 
+    console.log("ENVIANDO:", formData);
+
     try {
       const res = await fetch("http://localhost:3001/auth/register", {
         method: "POST",
@@ -77,6 +88,7 @@ export default function RegisterPage() {
           name: formData.fullName,
           email: formData.email,
           password: formData.password,
+          businesstype: formData.businesstype,
         }),
       });
 
@@ -151,6 +163,16 @@ export default function RegisterPage() {
             </div>
           ))}
 
+          <div className="mt-4">
+            <label className="text-sm block text-gray-700 font-semibold mt-3">
+              Tipo de rubro
+            </label>
+
+            <BusinessTypeSelect
+              value={formData.businesstype}
+              onChange={handleBusinessChange}
+            />
+          </div>
           <button
             type="submit"
             disabled={loading}
