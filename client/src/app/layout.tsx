@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/page";
 import { Toaster } from "sonner";
 
 const geistSans = Geist({
@@ -30,21 +28,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      {/* <ThemeProvider
-        attribute="class"
-        defaultTheme="light"
-        enableSystem={true}
-        disableTransitionOnChange={true}
-      > */}
+      <head>
+        <link rel="icon" href="/favicon.svg" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
         <Toaster position="bottom-right" richColors />
         {children}
-        <Footer />
       </body>
-      {/* </ThemeProvider> */}
     </html>
   );
 }

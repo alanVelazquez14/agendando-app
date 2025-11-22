@@ -1,4 +1,3 @@
-import { Particles } from "@/utils/Particles";
 import { ArrowRight } from "lucide-react";
 import BeneficioPage from "./beneficio/page";
 import ComoFuncionaPage from "./como-funciona/page";
@@ -9,12 +8,6 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-col items-center justify-between p-8 md:p-24 bg-background transition-colors duration-300 overflow-x-hidden">
-        {/* Fondo partículas */}
-        <div className="absolute inset-0 -z-10">
-          <Particles />
-        </div>
-
-        {/* Contenedor principal con padding para mobile */}
         <div className="space-y-10 text-center w-full max-w-4xl px-4 md:px-0">
           <div>
             <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground mb-8 mt-24 leading-tight">
@@ -30,7 +23,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Botones responsivos */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 justify-center mt-8 w-full px-4">
             <button className="bg-[#651B1B] dark:bg-[#9A2C2C] text-white px-4 py-2.5 sm:px-6 sm:py-3 cursor-pointeruso rounded-xl font-semibold sm:font-bold shadow-md hover:bg-[#651B1B]/90 dark:hover:bg-[#9A2C2C]/90 transition-all duration-300 transform hover:-translate-y-0.5 focus:ring-4 focus:ring-[#651B1B]/50 dark:focus:ring-[#9A2C2C]/50 w-full sm:w-auto text-sm sm:text-base">
               Comenzar gratis
@@ -52,7 +44,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Secciones */}
       <section id="beneficios" className="px-4 md:px-0">
         <BeneficioPage />
       </section>
