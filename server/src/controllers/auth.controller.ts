@@ -5,9 +5,9 @@ import pool from "../database/db.js";
 
 export const register = async (req: Request, res: Response) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, businesstype } = req.body;
 
-    if (!name || !email || !password)
+    if (!name || !email || !password || !businesstype)
       return res.status(400).json({ message: "Faltan datos" });
 
     const exists = await pool.query("SELECT * FROM users WHERE email = $1", [
@@ -20,8 +20,8 @@ export const register = async (req: Request, res: Response) => {
     const hashed = await bcrypt.hash(password, 10);
 
     await pool.query(
-      "INSERT INTO users (name, email, password) VALUES ($1, $2, $3)",
-      [name, email, hashed]
+      "INSERT INTO users (name, email, password, businesstype) VALUES ($1, $2, $3, $4)",
+      [name, email, hashed, businesstype]
     );
 
     res.status(201).json({ message: "Usuario registrado" });
@@ -50,7 +50,7 @@ export const login = async (req: Request, res: Response) => {
     if (!match)
       return res.status(400).json({ message: "Credenciales inválidas" });
     const token = jwt.sign(
-      { userId: user.id },
+      { userId: user.id, businesstype: user.businesstype },
       process.env.JWT_SECRET as string,
       { expiresIn: "1d" }
     );
@@ -61,6 +61,7 @@ export const login = async (req: Request, res: Response) => {
         id: user.id,
         name: user.name,
         email: user.email,
+        businesstype: user.businesstype,
       },
     });
   } catch (err) {
